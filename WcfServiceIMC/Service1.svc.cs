@@ -29,5 +29,38 @@ namespace WcfServiceIMC
             }
             return composite;
         }
+
+        public string GetIMC(float taille, float poids)
+        {
+            float imc= (poids) / (taille/100*taille/100);
+            if (imc < 16)
+            {
+                return imc+" : Anorexie ou dénutrition";
+            }
+            else if (imc < 18.5)
+            {
+                return imc+" : Maigreur";
+            }
+            else if (imc < 25)
+            {
+                return imc + " : Corpulence normale";
+            }
+            else if (imc < 30)
+            {
+                return imc + " : Surpoids";
+            }
+            else if (imc < 35)
+            {
+                return imc + " : Obésité modérée (Classe 1)";
+            }
+            else if (imc < 40)
+            {
+                return imc + " : Obésité élevé (Classe 2)";
+            }
+            else
+            {
+                return imc + " : Obésite morbide ou massive";
+            }
+        }
     }
 }

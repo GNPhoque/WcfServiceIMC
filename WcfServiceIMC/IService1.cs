@@ -12,6 +12,8 @@ namespace WcfServiceIMC
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        string GetIMC(float taille, float poids);
 
         [OperationContract]
         string GetData(int value);
